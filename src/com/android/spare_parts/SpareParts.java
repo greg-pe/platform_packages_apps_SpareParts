@@ -142,15 +142,9 @@ public class SpareParts extends PreferenceActivity
     }
 
     private void updateToggles() {
-<<<<<<< HEAD
-        mFancyImeAnimationsPref.setChecked(Settings.System.getInt(
-                getContentResolver(), 
-                Settings.System.FANCY_IME_ANIMATIONS, 0) != 0);
-=======
         mFancyImeAnimationsPref.setChecked(Settings.Global.getInt(
                 getContentResolver(), 
                 Settings.Global.FANCY_IME_ANIMATIONS, 0) != 0);
->>>>>>> remotes/aosp/jb-mr1-release
         mHapticFeedbackPref.setChecked(Settings.System.getInt(
                 getContentResolver(), 
                 Settings.System.HAPTIC_FEEDBACK_ENABLED, 0) != 0);
@@ -173,13 +167,8 @@ public class SpareParts extends PreferenceActivity
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mCompatibilityMode) {
-<<<<<<< HEAD
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.COMPATIBILITY_MODE,
-=======
             Settings.Global.putInt(getContentResolver(),
                     Settings.Global.COMPATIBILITY_MODE,
->>>>>>> remotes/aosp/jb-mr1-release
                     mCompatibilityMode.isChecked() ? 1 : 0);
             return true;
         }
@@ -254,13 +243,8 @@ public class SpareParts extends PreferenceActivity
     
     public void onSharedPreferenceChanged(SharedPreferences preferences, String key) {
         if (FANCY_IME_ANIMATIONS_PREF.equals(key)) {
-<<<<<<< HEAD
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.FANCY_IME_ANIMATIONS,
-=======
             Settings.Global.putInt(getContentResolver(),
                     Settings.Global.FANCY_IME_ANIMATIONS,
->>>>>>> remotes/aosp/jb-mr1-release
                     mFancyImeAnimationsPref.isChecked() ? 1 : 0);
         } else if (HAPTIC_FEEDBACK_PREF.equals(key)) {
             Settings.System.putInt(getContentResolver(),
